@@ -31,3 +31,27 @@ DIVIDE(
     [Total Élèves],
     0
 )
+
+## 📐 Structure du Rapport & Fonctionnalités des Pages
+
+Le tableau de bord est structuré en **3 pages thématiques clés**, chacune répondant à un angle d'analyse décisionnel précis :
+
+### 👤 Page 1 — Vue Élèves (Suivi de la Performance & Risques)
+Cette page se concentre sur la trajectoire académique des étudiants et la détection précoce du décrochage.
+*   **KPIs Principaux :** Volume total d'élèves inscrits et Taux de Réussite global (sécurisé via `CROSSFILTER` pour un calcul exact).
+*   **Analyses Visuelles :** Corrélation dynamique entre le taux d'absentéisme et la chute des notes moyennes.
+*   **Aide à la Décision :** Isolation et listage des profils d'élèves jugés "à risque" pour déclencher des actions de tutorat ciblées.
+
+### 👨‍🏫 Page 2 — Vue Enseignants (Charge de Travail & Évaluations)
+Conçue pour l'analyse des ressources humaines et de la répartition de la charge pédagogique.
+*   **KPIs Principaux :** Total des enseignants actifs, moyenne des heures dispensées, ancienneté moyenne et note d'évaluation globale.
+*   **Analyses Visuelles :** 
+    *   Histogramme continu de distribution des performances (regroupement par *Bins* de 0,5).
+    *   Graphique en barres 100% empilées croisant les matières enseignées et le statut contractuel (Titulaire, Contractuel, Vacataire).
+*   **Aide à la Décision :** Tableaux dynamiques isolant le Top 5 et le Flop 5 des performances pour guider les plans de formation ou de redistribution des charges.
+
+### 📚 Page 3 — Vue Cours (Suivi de l'Exécution Pédagogique)
+Dédiée au suivi opérationnel des programmes et de la validation des modules.
+*   **KPIs Principaux :** Taux de Réalisation Moyen du volume horaire (calculé proprement via le ratio des sommes d'heures prévues/réalisées pour éviter les biais de granularité).
+*   **Analyses Visuelles :** Répartition des statuts de passage par matière et par semestre.
+*   **Aide à la Décision :** Identification visuelle immédiate des matières affichant les taux d'échec les plus critiques (ex: Chimie, Littérature, Anglais) nécessitant des ajustements de planning ou des cours de soutien.
