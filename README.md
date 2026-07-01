@@ -16,22 +16,6 @@ Le projet s'appuie sur une modélisation optimisée en **schéma en étoile**, g
 
 ---
 
-## 🚀 Fonctionnalités Majeures & Formules DAX Clés
-
-### 1. Gestion des Relations Complexes et Filtrage Croisé
-Pour surmonter les limitations des flèches de relation unidirectionnelles du modèle, la mesure clé du **Taux de Réussite** a été sécurisée en forçant un filtrage bidirectionnel temporaire dynamique :
-```dax
-Taux de Réussite = 
-DIVIDE(
-    CALCULATE(
-        [Total Élèves],
-        CROSSFILTER(courses[student_id], students[student_id], BOTH),
-        courses[statut passage] = "Réussi"
-    ),
-    [Total Élèves],
-    0
-)
-
 ## 📐 Structure du Rapport & Fonctionnalités des Pages
 
 Le tableau de bord est structuré en **3 pages thématiques clés**, chacune répondant à un angle d'analyse décisionnel précis :
@@ -55,3 +39,23 @@ Dédiée au suivi opérationnel des programmes et de la validation des modules.
 *   **KPIs Principaux :** Taux de Réalisation Moyen du volume horaire (calculé proprement via le ratio des sommes d'heures prévues/réalisées pour éviter les biais de granularité).
 *   **Analyses Visuelles :** Répartition des statuts de passage par matière et par semestre.
 *   **Aide à la Décision :** Identification visuelle immédiate des matières affichant les taux d'échec les plus critiques (ex: Chimie, Littérature, Anglais) nécessitant des ajustements de planning ou des cours de soutien.
+
+## 🚀 Fonctionnalités Majeures & Formules DAX Clés
+
+### 1. Gestion des Relations Complexes et Filtrage Croisé
+Pour surmonter les limitations des flèches de relation unidirectionnelles du modèle, la mesure clé du **Taux de Réussite** a été sécurisée en forçant un filtrage bidirectionnel temporaire dynamique :
+```dax
+Taux de Réussite = 
+DIVIDE(
+    CALCULATE(
+        [Total Élèves],
+        CROSSFILTER(courses[student_id], students[student_id], BOTH),
+        courses[statut passage] = "Réussi"
+    ),
+    [Total Élèves],
+    0
+)
+
+
+
+
